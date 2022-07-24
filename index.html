@@ -1,25 +1,64 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Rock Paper Scissors</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>      
-        <script src="javascript.js" async defer></script>
-        <header>
-            <h1>Rock-Paper-Scissors<h1>
-        </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+    <div id="gameConsole">
+    <header class="header">
+        <h1>Rock-Paper-Scissors</h1>
+        <h2>The first to Score <strong> 5 points win</strong></h2>
+        <div class="scoreBoard">
+            <div class="hSide">
+                <h2>Your Score: <span id="hScore">0</span></h2>
+            </div>
+            <div class="cSide">
+                <h2>Computer Score: <span id="cpuScore">0</span></h2>
+            </div>
+        </div>
+    </header>
+    <main class="game">
+        <div class="makeChoice"><h1>Choose your weapon</h1></div>
+        <div class="weapons">
+            <button id="rock-btn" class="weapon"><img src="images/rock.png" alt="rock"></button>
+            <button id="paper-btn" class="weapon"><img src="images/paper.png" alt="paper"></button>
+            <button id="scissors-btn" class="weapon"><img src="images/scissors.png" alt="scissors"></button>
+        </div>
+    </main>
 
-        <article>
+    <main id="modal-game" >
+            <div id="playerWeapon">
+            </div>
+            <div class="battleResult">
+                <h1 id="battleResultId"></h1>
+            </div>
+            <div id="cpuWeapon">
+            </div>
+    </main>
 
-        </article>
-        
-        <footer>
-            <p>Copyright <strong>SUMustapha</strong>2022</p>
-        </footer>
-    </body>
+    <footer>
+        <div id="roundsDisplay">
+            <div class="hSide">
+                <h2>Round</h2>
+            </div>
+            <div class="cSide">
+                <h2 id="round">1</h2>
+            </div>
+        </div>
+        <div class="foot"><h3>© S.U.Mustapha, 2022</h3></div>
+    </footer>
+    </div>
+    <div id="resetModal" class="modal">
+        <div class="resetPrompt">
+            <h2 class="resetMsg">Game Over</h2>
+            <h1 class="reset">You <span id="winlose"></span></h1>
+            <button id="reset">Play Again</button>
+        </div>
+    </div>
+</body>
 </html>
