@@ -1,5 +1,204 @@
-*,*::before,*::after{
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+  }
+
+html, body {
+    height: 100%;
+  }
+
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    font-family: 'Ibarra Real Nova', serif;
+    line-height: 1.5;
+    color: antiquewhite;
+}
+#gameConsole{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.header{
+    display:flex;
+    flex-flow:column wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(17, 17, 17);
+    height: auto;
+    width: 100vw;
+    opacity: 0.8;
+}
+
+header>h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.scoreBoard{
+    width: 100%;
+    font-size: 30px;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.scoreBoard .hSide{
+    background-color: rgba(0,212,255,1);
+    color: black;
+    flex:1;
+}
+
+.scoreBoard .cSide{
+    background-color: rgba(9,9,121,1);
+    flex:1;
+}
+
+main.game{
+    display: flex;                          
+    flex-direction: column;
+    flex: 1;
+    transition: 0.5s;
+}
+
+
+.makeChoice :first-child{
+padding-top:3rem;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+.weapons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+}
+
+.weapons>*{
+    outline: 0;
+    background: none;
+    border: 0;
+}
+
+.weapons img{
+    height:10rem;
+    cursor: pointer;
+}
+
+.weapons img:active{
+    transform: scale(1.1);
+}
+
+#roundsDisplay{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    width: 100vw;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+} 
+
+#roundsDisplay .hSide{
+    background-color: rgba(0,212,255,1);
+    color: black;
+    display: flex;
+    justify-content: center;
+    width: 12.5%;
+
+}
+
+#roundsDisplay .cSide{
+    background-color: rgba(9,9,121,1);
+    display: flex;
+    justify-content: center;
+    width: 12.5%;
+}
+
+
+footer{
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-weight: bolder;
+    background-color:rgba(2,0,36,1) 
+    ;
+}
+
+/* Modal */
+#modal-game{
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    transition: 0.5s;
+}
+
+#playerWeapon, #cpuWeapon{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height:100%;
+}
+
+.battleResult{
+    display:flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top:40px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+
+#playerWeapon>img, #cpuWeapon>img{
+    height: 12rem;
+    outline: 0;
+    background: none;
+    border: 0;
+}
+
+#resetModal{
+    display: none;
+    min-height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+#resetModal.resetPrompt{
+    height: 25vw;
+    width: 25vw;
+    background-color: rgb(70, 1, 1);
+
+}
+
+#reset{
+    margin-top: 20px;
+    background-color: rgb(116, 4, 4);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+}
+
+#reset:hover{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
